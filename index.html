@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>14 天饮食控制打卡表</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="controls no-print" aria-label="打印设置">
+        <div>
+          <h1>14 天饮食控制打卡表</h1>
+          <p>选择开始日期，生成一张适合 A4 打印的手写打卡表。</p>
+        </div>
+
+        <div class="control-grid">
+          <label>
+            标题
+            <input id="titleInput" type="text" value="14 天饮食控制打卡表" />
+          </label>
+
+          <label>
+            开始日期
+            <input id="startDateInput" type="date" />
+          </label>
+
+          <label>
+            目标天数
+            <input id="targetDaysInput" type="number" min="1" max="14" value="10" />
+          </label>
+
+          <label>
+            晚间规则
+            <input id="eveningRuleInput" type="text" value="20:00 后尽量不进食" />
+          </label>
+
+          <label>
+            鼓励语
+            <input id="encourageInput" type="text" value="今天填上去，就是在赢。" />
+          </label>
+        </div>
+
+        <div class="button-row">
+          <button id="generateButton" type="button">生成</button>
+          <button id="printButton" type="button">打印</button>
+        </div>
+      </section>
+
+      <section class="print-sheet" aria-label="14 天饮食控制打卡表">
+        <header class="sheet-header">
+          <div>
+            <p class="kicker">PRINTABLE CHECK-IN SHEET</p>
+            <h2 id="sheetTitle">14 天饮食控制打卡表</h2>
+          </div>
+          <div class="score-box">
+            <span>第</span>
+            <strong>1</strong>
+            <span>轮</span>
+          </div>
+        </header>
+
+        <section class="encourage-strip" aria-label="鼓励语">
+          <span>给今天的自己</span>
+          <strong id="encourageText">今天填上去，就是在赢。</strong>
+        </section>
+
+        <section class="goal-strip" aria-label="14 天目标">
+          <div>
+            <span class="field-label">14 天目标</span>
+            <p id="goalText">至少 10 天达到 ○ 或 △</p>
+          </div>
+          <div>
+            <span class="field-label">晚间规则</span>
+            <p id="ruleText">20:00 后尽量不进食</p>
+          </div>
+          <div class="weight-fields">
+            <span>开始体重：________ kg</span>
+            <span>结束体重：________ kg</span>
+          </div>
+        </section>
+
+        <section id="daysGrid" class="days-grid" aria-label="每日打卡"></section>
+
+        <footer class="review-panel">
+          <div class="review-stats">
+            <span>○ 良好：____ 天</span>
+            <span>△ 守住：____ 天</span>
+            <span>× 失控：____ 天</span>
+            <span>20:00 后未进食：____ 天</span>
+            <span>体重变化：____ kg</span>
+          </div>
+          <div class="review-lines">
+            <label>这 14 天最容易失控的时间：<span></span></label>
+            <label>下一个 14 天只改一件事：<span></span></label>
+          </div>
+        </footer>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
